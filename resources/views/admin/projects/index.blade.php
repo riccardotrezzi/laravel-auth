@@ -12,6 +12,26 @@
                     </h1>
                 </div>
 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Titolo</th>
+                            <th scope="col">Data del progetto</th>
+                            <th scope="col">Tipologia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($projects as $project)
+                            <tr>
+                                <th scope="row">{{ $project->id }}</th>
+                                <td>{{ $project->title }}</td>
+                                <td>{{ $project->project_date }}</td>
+                                <td>{{ project->project_type }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
                 
             </div>
         </div>
