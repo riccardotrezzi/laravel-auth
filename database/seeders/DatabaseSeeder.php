@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::truncate();
+        
         User::factory()->create([
             'name' => 'Riccardo Trezzi',
             'email' => 'riccardo@trezzi.com',
