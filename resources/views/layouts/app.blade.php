@@ -24,7 +24,7 @@
                                 <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.myprojects') }}">My Projects</a>
+                                <a class="nav-link" href="{{ route('admin.projects.index') }}">Progetti</a>
                             </li>
                         </ul>
                         <form method="POST" action="{{ route('logout') }}">

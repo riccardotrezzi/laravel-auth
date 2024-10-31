@@ -15,7 +15,7 @@ class MainController extends Controller
     
     public function projects()
     {
-        return view('admin.myprojects');
+        return view('admin.projects.index');
     }
 
 }

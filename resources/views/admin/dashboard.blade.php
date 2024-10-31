@@ -10,7 +10,7 @@
                     <h1 class="text-center text-success mb-4">
                         Sei loggato!
                     </h1>
-                    <a href="{{ route('projects.index') }}" class="btn btn-primary d-flex justify-content-center">
+                    <a href="{{ route('admin.projects.index') }}" class="btn btn-primary d-flex justify-content-center">
                         Vai ai miei progetti!
                     </a>
                 </div>

@@ -27,7 +27,7 @@
                                 <th scope="row">{{ $project->id }}</th>
                                 <td>{{ $project->title }}</td>
                                 <td>{{ $project->project_date }}</td>
-                                <td>{{ project->project_type }}</td>
+                                <td>{{ $project->project_type }}</td>
                             </tr>
                         @endforeach
                     </tbody>
