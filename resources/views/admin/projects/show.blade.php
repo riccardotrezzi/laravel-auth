@@ -16,7 +16,7 @@
         <h6 class="mb-4">
             Tipologia: {{$project->project_type}}
         </h6>
-        <a href="{{ route('admin.projects.index')}}" class="btn btn-primary">Torna ai progetti</a>
+        <a href="{{ route('admin.projects.index')}}" class="btn btn-warning">Torna ai progetti</a>
   </div>
 </div>
     @endsection

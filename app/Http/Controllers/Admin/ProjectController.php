@@ -26,7 +26,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
@@ -34,7 +34,24 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:128|min:3',
+            'description' => 'required|max:4096|min:3',
+            'img' => 'nullable|max:2048|url',
+            'project_date' => 'nullable|date',
+            'project_type' => 'required|max:32|min:3',
+        ]);
+
+        $data = $request->all();
+        $project = new Project();
+        $project->title = $data['title'];
+        $project->description = $data['description'];
+        $project->img = $data['img'];
+        $project->project_date = $data['project_date'];
+        $project->project_type = $data['project_type'];
+        $project->save();
+
+        return redirect()->route('admin.project.show', ['project' => $project->id]);
     }
 
     /**

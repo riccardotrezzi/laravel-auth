@@ -12,6 +12,12 @@
                     </h1>
                 </div>
 
+                <div class="mb-4">
+                    <a href="{{ route('admin.projects.create') }}" class="btn btn-success w-100">
+                        + Aggiungi
+                    </a>
+                </div>
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -32,6 +38,8 @@
                                     <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}" class="btn btn-primary">
                                         Guarda il progetto!
                                     </a>
+                                    
+                                    
                                 </td>
                             </tr>
                         @endforeach
