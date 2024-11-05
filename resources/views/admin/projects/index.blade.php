@@ -28,8 +28,14 @@
                                 <td>{{ $project->title }}</td>
                                 <td>{{ $project->project_date }}</td>
                                 <td>{{ $project->project_type }}</td>
+                                <td>
+                                    <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}" class="btn btn-primary">
+                                        Guarda il progetto!
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
+
                     </tbody>
                 </table>
                 
