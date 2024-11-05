@@ -65,9 +65,10 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(string $id)
     {
-        //
+        $project = Project::findOrFail($id);
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -75,7 +76,17 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $project = Project::findOrFail($id);
+        $data = $request->all();
+        
+        $project->title = $data['title'];
+        $project->description = $data['description'];
+        $project->img = $data['img'];
+        $project->project_date = $data['project_date'];
+        $project->project_type = $data['project_type'];
+        $project->save();
+
+        return redirect()->route('admin.project.show', ['project' => $project->id]);
     }
 
     /**
@@ -83,6 +94,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $comic->delete();
+        return redirect()->route('admin.projects.index');
     }
 }

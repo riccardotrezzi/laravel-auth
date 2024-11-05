@@ -38,7 +38,16 @@
                                     <a href="{{ route('admin.projects.show', ['project' => $project->id]) }}" class="btn btn-primary">
                                         Guarda il progetto!
                                     </a>
-                                    
+                                    <a href="{{ route('admin.projects.edit', ['project' => $project->id]) }}" class="btn btn-warning">
+                                        Modifica
+                                    </a>
+                                    <form onsubmit="return confirm('Attenzione! Stai cancellando questo elemento, vuoi continuare?')" action="{{ route('admin.projects.destroy', ['project' => $project->id]) }}" class="d-inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+                                            Elimina
+                                        </button>
+                                    </form>
                                     
                                 </td>
                             </tr>
